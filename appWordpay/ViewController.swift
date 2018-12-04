@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sentenceTextField: UITextView!
     
     //properties:
-    var place: String!
+    
 
     //functions:
     override func viewDidLoad() {
@@ -32,13 +32,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
  
     }
     
-//    func placeString(_ place) -> String {
-//        if let place = placeFirstViewTextField.text! {
-//            return place
-//        } else {
-//            place = ""
-//        }
-//    }
 
 }
 
