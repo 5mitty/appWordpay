@@ -80,6 +80,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Tpk-bN-R6L"/>
                     </view>
+                    <connections>
+                        <outlet property="MVPSecondViewTextField" destination="VVj-Nw-cuw" id="2ob-lN-KVa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOp-ZL-sil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,22 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var placeFirstViewTextField: UITextField!
     @IBOutlet weak var sentenceTextField: UITextView!
     
     //properties:
-    
+    var place: String!
 
     //functions:
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        placeFirstViewTextField.delegate = self
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nvc = segue.destination as! ViewController
+        let nvc = segue.destination as! SecondViewController
+        if let placeVar = placeFirstViewTextField.text {
+            print(placeVar)
+            nvc.firstDataPassed = placeVar
+        }
+ 
     }
+    
+//    func placeString(_ place) -> String {
+//        if let place = placeFirstViewTextField.text! {
+//            return place
+//        } else {
+//            place = ""
+//        }
+//    }
 
 }
 
