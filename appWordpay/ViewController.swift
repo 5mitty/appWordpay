@@ -30,6 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             nvc.firstDataPassed = placeVar
         }
  
+        
     }
     
 
