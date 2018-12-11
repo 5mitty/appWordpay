@@ -19,9 +19,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var onTypedStretch1Noun: UITextField!
     @IBOutlet weak var onTypedStretch1Adjective: UITextField!
     @IBOutlet weak var onTypedStretch1Verb: UITextField!
+    //Stretch2
+    var isGoingToStretch23: Bool = false
     
     
     //functions:
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //MVP
@@ -34,28 +37,43 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func onGoToStretch23(_ sender: Any) {
+        isGoingToStretch23 = true
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nvc = segue.destination as! SecondViewController
-        //MVP
-        if let placeVar = placeFirstViewTextField.text {
-            print(placeVar)
-            nvc.firstDataPassed = placeVar
+        print(segue.identifier)
+        if segue.identifier == "addSentenceSegue" {
+            let nvc = segue.destination as! SecondViewController
+            //MVP
+            if let placeVar = placeFirstViewTextField.text {
+                print(placeVar)
+                nvc.firstDataPassed = placeVar
+            }
         }
- 
-        //Stretch1
-        if let madLibNoun = onTypedStretch1Noun.text {
-            print(madLibNoun)
-            nvc.stretch1NounSVC = madLibNoun
+        if segue.identifier == "madLibSegue" {
+            let nvc = segue.destination as! SecondViewController
+            //Stretch1
+            if let madLibNoun = onTypedStretch1Noun.text {
+                print(madLibNoun)
+                nvc.stretch1NounSVC = madLibNoun
+            }
+            if let madLibAdjective = onTypedStretch1Adjective.text {
+                print(madLibAdjective)
+                nvc.stretch1AdjectiveSVC = madLibAdjective
+            }
+            
+            if let madLibVerb = onTypedStretch1Verb.text {
+                print(madLibVerb)
+                nvc.stretch1VerbSVC = madLibVerb
+            }
         }
-        if let madLibAdjective = onTypedStretch1Adjective.text {
-            print(madLibAdjective)
-            nvc.stretch1AdjectiveSVC = madLibAdjective
+        if segue.identifier == "stretch23Segue" {
+            let nvc = segue.destination as! ThirdViewController
         }
         
-        if let madLibVerb = onTypedStretch1Verb.text {
-            print(madLibVerb)
-            nvc.stretch1VerbSVC = madLibVerb
-        }
+        
+ 
+        
         
     }
     

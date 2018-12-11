@@ -30,14 +30,19 @@ class SecondViewController: UIViewController {
         
         let firstPartOfTheFullSentence = "My uncle wants to go the "
         
-        MVPSecondViewTextField.text = "\(firstPartOfTheFullSentence)" + "\(firstDataPassed)"
+        MVPSecondViewTextField.text = "\(firstPartOfTheFullSentence)" + "\(firstDataPassed)."
         //MVP End
         
         // The adjective foot stomps on Noun while you just Verb
         
         
         //Stretch 1 Start
-        S1SVCMadLibTextView.text = "The " + "\(stretch1AdjectiveSVC.lowercased()) " + "foot stomps on " + "\(stretch1NounSVC), " + "while you just " + "\(stretch1VerbSVC.lowercased())."
+        if stretch1NounSVC == "" {
+            return
+        } else {
+            S1SVCMadLibTextView.text = "The " + "\(stretch1AdjectiveSVC.lowercased()) " + "foot stomps on " + "\(stretch1NounSVC), " + "while you just " + "\(stretch1VerbSVC.lowercased())."
+        }
+        
         //Stretch 1 End
         
     }
